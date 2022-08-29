@@ -22,7 +22,14 @@
 				"settings": {
 					"odataVersion": "4.0"
 				}
-			}
+			},
+			"booksRemote": {
+				"uri": "https://services.odata.org/TripPinRESTierService/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "4.0"
+				}
+			}			
 		}
 	},
 	"sap.ui": {
@@ -68,7 +75,15 @@
 					"operationMode": "Server",
 					"groupId": "$direct"
 				}
-			}
+			},
+			"books": {
+				"dataSource": "booksRemote",
+				"settings": {
+					"synchronizationMode": "None",
+					"operationMode": "Server",
+					"groupId": "$auto"
+				}
+			}			
 		},
 		"resources": {
 			"css": [
