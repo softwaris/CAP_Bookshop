@@ -10,7 +10,7 @@
     "express": "^4"
   },
   "devDependencies": {
-    "sqlite3": "^5.0.4"
+    "sqlite3": "^5.0.11"
   },
   "scripts": {
     "start": "cds run"
@@ -41,6 +41,16 @@
     "rules": {
       "no-console": "off",
       "require-atomic-updates": "off"
+    }
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "database": "my.db"
+        }
+      }
     }
   }
 }
