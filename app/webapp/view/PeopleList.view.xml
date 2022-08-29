@@ -1,0 +1,46 @@
+<mvc:View
+	controllerName="sap.ui.demo.bookshop.controller.PeopleList"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Table
+		id="peopleList"
+		class="sapUiResponsiveMargin"
+		width="auto"
+		items="{
+			path : 'people>/People'
+		}">
+		<headerToolbar>
+			<Toolbar>
+				<Title text="{i18n>peopleListTitle}"/>
+				<ToolbarSpacer/>
+				<SearchField width="50%" search=".onFilterInvoices"/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column>
+				<Text text="{i18n>columnUserName}"/>
+			</Column>
+			<Column
+				minScreenWidth="Small"
+				demandPopin="true">
+				<Text text="{i18n>columnFirstName}"/>
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="false">
+				<Text text="{i18n>columnLastName}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem
+				type="Navigation"
+				press=".onPress">
+				<cells>
+					<ObjectIdentifier title="{people>UserName}"/>
+					<Text text="{people>FirstName}"/>
+					<Text text="{people>LastName}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</mvc:View>
