@@ -77,7 +77,7 @@
 					"bundleName": "sap.ui.demo.bookshop.Bookshop.i18n.i18n"
 				}
 			},
-			"": {
+			"books": {
 				"dataSource": "mainService",
 				"preload": true
 			}
