@@ -8,7 +8,9 @@
   "dependencies": {
     "@sap/cds": ">=5",
     "@sap/cds-odata-v2-adapter-proxy": "^1.9.5",
-    "express": "^4"
+    "@sapui5/generator-sapui5-templates": "^1.71.6",
+    "express": "^4",
+    "yo": "^4.3.0"
   },
   "devDependencies": {
     "@ui5/cli": "^2.14.10",
