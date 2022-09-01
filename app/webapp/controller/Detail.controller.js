@@ -30,7 +30,7 @@ sap.ui.define([
 
 			this.setModel(oViewModel, "detailView");
 
-			this.getOwnerComponent().getModel().metadataLoaded().then(this._onMetadataLoaded.bind(this));
+			this.getOwnerComponent().getModel("books").metadataLoaded().then(this._onMetadataLoaded.bind(this));
 		},
 
 		/* =========================================================== */
@@ -66,8 +66,9 @@ sap.ui.define([
 		_onObjectMatched : function (oEvent) {
 			var sObjectId =  oEvent.getParameter("arguments").objectId;
 			this.getModel("appView").setProperty("/layout", "TwoColumnsMidExpanded");
-			this.getModel().metadataLoaded().then( function() {
-				var sObjectPath = this.getModel().createKey("Books", {
+			var model = this.getModel("books")
+			this.getModel("books").metadataLoaded().then( function() {
+				var sObjectPath = this.getModel("books").createKey("Books", {
 					ID :  sObjectId
 				});
 				this._bindView("/" + sObjectPath);

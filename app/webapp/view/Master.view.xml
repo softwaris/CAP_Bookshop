@@ -85,9 +85,9 @@
 					<ObjectListItem
 						type="Navigation"
 						press=".onSelectionChange"
-						title="{title}"
+						title="{books>title}"
 						number="{
-							path: 'stock',
+							path: 'books>stock',
 							formatter: '.formatter.currencyValue'
 						}"
 >
