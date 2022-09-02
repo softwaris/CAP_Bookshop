@@ -3,14 +3,16 @@ module.exports = function (){
   this.on ('READ','Books', async (req,next) => {
     const books = await next()
     books.requested = true
-    req.data.test = true
-    console.log(books.data)
+    console.log(books)
     return books
   });  
   this.after ('READ','Books', each => {
     if (each.stock > 111) {
       each.title += ` -- 25% discount!`
-      //each.author += ` -- Test Aris`
     }
   });
+  this.after ('READ','Books', (books,req) => {
+    req.headers.referer = ''
+    console.log(req.headers)
+  }); 
 }
